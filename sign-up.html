@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sign up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Generate Anki Go fast with AI. Save time creating flashcards and focus on studying instead. Perfect for medical students and language learners.">
+    
+    <meta name="author" content="Iced Coffee">
+    <meta name="keywords" content="anki ai, pdf to anki, anki flashcards, anki go, flashcards, flashcard maker, flashcards ai, anki flashcards ai, anki deck generator, quizlet">
+
+    <!-- Performance: Preconnect to external CDNs used below -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
+    <!-- Progressive Web App -->
+    <link rel="manifest" href="/manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="Anki Go">
+    <meta name="theme-color" content="#000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Anki Go">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Bootswatch Minty Theme (Bootstrap 5) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3/dist/minty/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+    <!-- This file stores project-specific CSS -->
+    <link href="/static/css/project.5da0e0808ead.css" rel="stylesheet">
+    
+    <style>
+      /* ---------- Purple theme overrides (light purple) ---------- */
+      :root {
+        --purple-50: #faf7ff;
+        --purple-100: #f3ecff;
+        --purple-300: #d9c7ff;
+        --purple-500: #b99bff; /* main */
+        --purple-600: #9a7bff;
+        --purple-700: #7e5eff;
+        --purple-900: #4b2b99;
+        --white-900: #ffffff;
+        --black-900: #010000;
+
+      }
+      .dark-magic{
+        display: flex;
+    
+        justify-content: center;
+      }
+      /* Navbar background (was bg-primary-subtle) */
+      .bg-primary-subtle {
+        background-color: var(--purple-50) !important;
+      }
+
+      /* Brand */
+      .navbar .navbar-brand,
+      .navbar .navbar-brand * {
+        color: var(--purple-700) !important;
+      }
+
+      /* Sign up  button  starts*/
+      .btn-primary {
+        background-color: var(--purple-50) !important;
+        border-color: var(--purple-600) !important;
+        box-shadow: 0 2px 6px rgba(248, 248, 250, 0.12);
+      }
+      .btn-primary:hover, .btn-primary:focus {
+        background-color: rgba(249, 249, 249, 0.06) !important;
+  
+        border-color: var(--purple-700) !important;
+      }
+         /* Sign up  button ends */
+
+         
+      /* Log In button starts */
+
+      .btn-outline-info {
+        background-color: var(--purple-700) !important;
+        color: var(--purple-50) !important;
+        border-color: rgba(28, 0, 138, 0.645) !important;
+        box-shadow: 0 2px 6px rgba(248, 248, 250, 0.12);
+        
+      }
+      .btn-outline-info:hover {
+        background-color: rgba(51, 36, 104, 0.06) !important;
+        background-color: var(--purple-50) !important;
+        border-color: var(--purple-700) !important;
+      }
+      /* Log In button ends */
+
+      /* Links and accents */
+      a, .nav-link { color: var(--purple-700) !important; }
+      a:hover { color: var(--purple-900) !important; }
+
+      .text-primary { color: var(--purple-700) !important; }
+
+      /* Small muted helper text */
+      .small-muted { color: #6b5fb8; }
+
+      /* Card shadow tint */
+      .card.shadow-lg {
+        box-shadow: 0 12px 30px rgba(123,87,255,0.09) !important;
+      }
+
+      /* Toggle icon color */
+      .bi-circle-half { color: var(--purple-700); }
+
+      /* Footer accents */
+      footer { border-top: 1px solid rgba(0,0,0,0.04); }
+      footer .fw-bold { color: var(--purple-700); }
+
+      /* Helper space for fixed navbar */
+      .pt-navbar { padding-top: 72px; }
+
+      /* Ensure gradient focus outlines are purple-ish */
+      .form-control:focus {
+        box-shadow: 0 0 0 0.15rem rgba(185,155,255,0.25);
+        border-color: var(--purple-600);
+      }
+
+      /* Make the "Sign up" primary large buttons look nicer on mobile */
+      @media (max-width: 576px) {
+        .btn-lg { padding: .6rem 1rem; font-size: .95rem; }
+      }
+      /* ----------------------------------------------------------- */
+    </style>
+
+    <!-- Le javascript ================================================== -->
+      <!-- Include Popper.js -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js" defer></script>
+
+      <!-- Bootstrap JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js" integrity="sha512-OvBgP9A2JBgiRad/mM36mkzXSXaJE9BEIENnVEmeZdITvwT09xnxLtT4twkCa8m/loMbPHsvPl0T8lRGVBwjlQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+      <!-- Include jQuery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- NAVBAR (modified links per your earlier request) -->
+    <nav class="navbar navbar-expand-md navbar-light fixed-top bg-primary-subtle">
+      <div class="container-fluid">
+
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand fw-bold" href="/">
+          Anki Go
+        </a>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/deck/create_deck_general_knowledge/">Create a Deck</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="/anki-decks/shared/">My Decks</a>
+            </li>
+          </ul>
+          
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown me-2">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="bd-theme"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-circle-half"></i>
+                <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme">
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="light"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-sun-fill"></i>
+                    <span class="ms-2">Light</span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    type="button"
+                    class="dropdown-item d-flex align-items-center"
+                    data-bs-theme-value="dark"
+                    aria-pressed="false"
+                  >
+                    <i class="bi bi-moon-stars-fill"></i>
+                    <span class="ms-2">Dark</span>
+                  </button>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a id="log-in-link" href="/accounts/login/" class="btn btn-outline-info fw-bold me-2">
+                Log in
+              </a>
+            </li>
+            
+            <li class="nav-item">
+              <a id="sign-up-link" href="/users/accounts/signup/" class="btn btn-primary fw-bold">
+                Sign up
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container pt-navbar mt-3">
+      <div class="row justify-content-center">
+        <div id="message-container" class="col-12 col-lg-8"></div>
+      </div>
+
+      <div id="toast-message-container" class="position-fixed top-0 end-0 p-3" style="z-index: 1060; max-width: 400px;"></div>
+    
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h1 class="text-primary dark-magic" >Sign Up</h1>
+
+          <div class="socialaccount_ballot my-4">
+            <ul class="socialaccount_providers">
+              <li class="d-inline">
+                <div class="d-grid gap-2">
+                  <a class="btn btn-lg btn-light" title="Google" class="socialaccount_provider google" href="/accounts/google/login/?process=login">
+                    <img style="width: 25px; height: 25px; margin-top: -5px;" alt="Google" src="./images/google.webp"/>
+                    Continue with Google
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="login-or text-center">OR</div>
+          </div>
+
+          <form class="signup" id="signup_form" method="post" action="/users/accounts/signup/">
+            <input type="hidden" name="csrfmiddlewaretoken" value="M7GrQuDMbO9iLvcaUdBF7WFbJqCyA5KDumB8LR6nWw2IF4BXKXZH4dkmdHPiKKq8">
+            
+            <div id="div_id_email" class="mb-3">
+              <label for="id_email" class="form-label requiredField">E-mail<span class="asteriskField">*</span></label>
+              <input type="email" name="email" placeholder="E-mail address" autocomplete="email" maxlength="320" class="textinput form-control" required id="id_email">
+            </div>
+
+            <div id="div_id_password1" class="mb-3">
+              <label for="id_password1" class="form-label requiredField">Password<span class="asteriskField">*</span></label>
+              <input type="password" name="password1" placeholder="Password" autocomplete="new-password" class="passwordinput form-control" required id="id_password1">
+            </div>
+
+            <div class="d-grid my-2 py-2">
+              <button class="btn btn-lg btn-block btn-primary" id="signup_btn" type="submit">
+                Sign Up &raquo;
+              </button>
+            </div>
+          </form>
+
+          <div class="d-grid my-2 py-2">
+            <a class="btn btn-light" href="/accounts/login/">Already have an account? Log in</a>
+          </div>
+
+        </div>
+      </div>
+    </div> <!-- /container -->
+
+    <hr/>
+    <footer class="sticky-footer p-4 mt-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 my-4 text-left">
+            <h5 class="fw-bold">Anki Go</h5>
+            <p>Anki Go is an AI learning platform to create and share flashcards for medschool, science, language learning, and more.</p>
+            <p class="fw-bold mb-0">Contact us:</p>
+            <a href="/cdn-cgi/l/email-protection#fe969b929291be9f909597d39a9b9d958dd09d9193"><span class="__cf_email__" data-cfemail="78101d1414173819161311551c1d1b130b561b1715">[email&#160;protected]</span></a>
+          </div>
+
+          <div class="col-md-2 my-4">
+            <h5 class="fw-bold">About</h5>
+            <ul class="list-unstyled">
+              <li><a href="/payment/pricing/">Pricing</a></li>
+              <li><a href="/blog/">Blog</a></li>
+              <li><a href="/faq/">FAQ</a></li>
+              <li><a href="/affiliate/">Affiliate Program</a></li>
+              <li><a href="/privacy/">Privacy Policy</a></li>
+              <li><a href="/terms/">Terms of Service</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 my-4">
+            <h5 class="fw-bold">Anki Go</h5>
+            <ul class="list-unstyled">
+              <li><a href="/anki-decks/anatomy/">Anatomy</a></li>
+              <li><a href="/anki-decks/biology/">Biology</a></li>
+              <li><a href="/anki-decks/chemistry/">Chemistry</a></li>
+              <li><a href="/anki-decks/geography/">Geography</a></li>
+              <li><a href="/anki-decks/history/">History</a></li>
+              <li><a href="/anki-decks/law/">Law</a></li>
+              <li><a href="/anki-decks/pathology/">Pathology</a></li>
+              <li><a href="/anki-decks/physics/">Physics</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 my-4">
+            <h5 class="fw-bold">AI Flashcard Generator</h5>
+            <ul class="list-unstyled">
+              <li><a href="/flashcard-generator/pdf-to-flashcards/">PDF to Flashcards</a></li>
+              <li><a href="/flashcard-generator/powerpoint-to-flashcards/">PowerPoint to Flashcards</a></li>
+              <li><a href="/flashcard-generator/word-to-flashcards/">Word to Flashcards</a></li>
+              <li><a href="/flashcard-generator/youtube-to-flashcards/">YouTube to Flashcards</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-2 my-4">
+            <h5 class="fw-bold">AI Quiz Generator</h5>
+            <ul class="list-unstyled">
+              <li><a href="/flashcard-generator/pdf-to-quiz/">PDF to Quiz</a></li>
+              <li><a href="/flashcard-generator/powerpoint-to-quiz/">PowerPoint to Quiz</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col my-4 text-center">
+            <span class="fw-bold">&copy; 2025 anki-go.com</span>
+            <p class="text-muted">Made with &hearts;</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Init scripts (kept from original page) -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+      function initializeToolTips() {
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => {
+          const existing = bootstrap.Tooltip.getInstance(el);
+          if (existing) {
+            try { existing.dispose(); } catch (_) {}
+          }
+        });
+        document.querySelectorAll('.tooltip').forEach(tipEl => tipEl.remove());
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el, { trigger: 'hover' }));
+      }
+
+      function initializeColorModeToggler() {
+        const root = document.documentElement;
+        const storageKey = 'theme';
+        const getStored = () => localStorage.getItem(storageKey);
+        const setStored = val => localStorage.setItem(storageKey, val);
+        const getPreferred = () => {
+          const stored = getStored();
+          if (stored === 'light' || stored === 'dark') return stored;
+          return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        };
+        const applyTheme = theme => { root.setAttribute('data-bs-theme', theme); setStored(theme); };
+        applyTheme(getPreferred());
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => { if (!getStored()) applyTheme(e.matches ? 'dark' : 'light'); });
+        document.querySelectorAll('[data-bs-theme-value]').forEach(btn => { btn.addEventListener('click', () => applyTheme(btn.getAttribute('data-bs-theme-value'))); });
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+        initializeToolTips();
+        initializeColorModeToggler();
+      });
+
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register("/serviceworker.js").catch(console.error);
+      }
+    </script>
+
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"f187780422f540a8ab326cf9ca195656","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+
+</body>
+</html>
